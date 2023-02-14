@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { signInAPI } from "../action";
+import { Redirect } from "react-router-dom";
 
 const Login = (props) => {
   return (
     <Container>
+      {props.user && <Redirect to="/home" />}
       <Nav>
         <a href="/">
           <img src="/images/login-logo.svg" alt="" />
@@ -18,11 +20,6 @@ const Login = (props) => {
       <Section>
         <Hero>
           <h1>Welcom to your porfessinal community</h1>
-
-        <div>
-
-        </div>
-
           <img src="/images/login-hero1.svg" alt="" />
         </Hero>
         <Form>
@@ -30,14 +27,51 @@ const Login = (props) => {
             <img src="/images/google.svg" alt="" />
             Sign in with Google
           </Google>
-
-          <FaceBook >
-          <img src="/images/facebook.png" alt="" />
-          Sign in with FaceBook
-        </FaceBook>
-
+          <Facebook>
+            <img src="/images/facebook.png" alt="" />
+            Sign in with Facebook
+          </Facebook>
         </Form>
       </Section>
+      <Content>
+        <Left>
+          <h2>Explore topics you are interested in</h2>
+        </Left>
+        <Right>
+          <h2>CONTENT TOPICS</h2>
+          <ul>
+          <li><a href="/">See All Topic</a></li>
+          <li><a href="/">Workplace</a></li>
+          <li><a href="/">Jobs Search</a></li>
+          <li><a href="/">Careers</a></li>
+          <li><a href="/">Interviewing</a></li>
+          <li><a href="/">Internship</a></li>
+          <li><a href="/">Salary and Compensation</a></li>
+          <li><a href="/">Employee Benefits</a></li>
+          </ul>
+        </Right>
+      </Content>
+
+      <Suggested>
+        <Left>
+          <h2>Find the right job or internship for you</h2>
+        </Left>
+        <Right>
+          <h2>SUGGESTED SEARCHES</h2>
+          <ul>
+          <li><a href="/">Engineering</a></li>
+          <li><a href="/">Business</a></li>
+          <li><a href="/">Finance</a></li>
+          <li><a href="/">Administrative</a></li>
+          <li><a href="/"> Assistant Retail</a></li>
+          <li><a href="/">Customer Services</a></li>
+          <li><a href="/">Operations Information</a></li>
+          </ul>
+          <button>Show more
+          <i class="fi fi-rr-angle-small-down"></i>
+          </button>
+        </Right>
+      </Suggested>
     </Container>
   );
 };
@@ -177,14 +211,12 @@ const Google = styled.button`
   }
   img {
     margin: 10px;
-    border-radius: 10px solid ;
+    border-radius: 10px solid;
   }
-
 `;
 
-const FaceBook = styled.button`
-
-display: flex;
+const Facebook = styled.button`
+  display: flex;
   justify-content: center;
   background-color: #fff;
   align-items: center;
@@ -204,11 +236,106 @@ display: flex;
   }
   img {
     margin: 10px;
-    border-radius: 5px solid ;
+    border-radius: 5px solid;
   }
+`;
+
+const Content = styled.div`
+  height: 340px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  background-color: #eae6df;
+`;
+
+const Left = styled.div`
+  width: 480px;
+  height: 100%;
+  margin-left: 185px;
+  display: flex;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-right:72px;
+  margin-bottom: 24px;
+  margin-top: 60px;
+  h2 {
+    font-weight: 250;
+    font-size: 48px;
+    line-height: 60px;
+    color: rgba(0, 0, 0, 0.9);
+  }
+
 
 `;
 
+const Right = styled.a`
+width: 480px;
+  height: 100%;
+  margin-right:72px;
+  margin-bottom: 24px;
+  margin-top: 60px;
+  h2 {
+    margin-bottom: 20px;
+    font-weight: 250;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 10px;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  li {
+    text-align: left;
+    &:first-child a{
+    color:#0a66c2;
+    border: 2px solid #0a66c2;
+  }
+
+  }
+
+
+  a {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-right: 6px;
+    margin-bottom: 12px;
+    padding: 0 25px;
+    float: left;
+    text-decoration: none;
+    min-height: 48px;
+    border: 2px solid #000000;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    font-weight: 250;
+    &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+   }
+  }
+  `;
+const Suggested = styled(Content)`
+  background-color: #ffffff;
+  button {
+    width: 124px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: -8px;
+    padding: 2px 8px !important;
+    border: none;
+    background-color: #ffffff;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+`;
 
 const mapStateToProps = (state) => {
   return {

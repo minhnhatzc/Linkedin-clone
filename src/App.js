@@ -1,10 +1,16 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+import { useEffect } from "react";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Header from "./components/Header";
+import { getUserAuth } from "./action";
+import { connect } from "react-redux";
 
-function App() {
+function App(props) {
+  useEffect(() => {
+    props.getUserAuth();
+  }, []);
   return (
     <div className="App">
       <Router>
@@ -12,7 +18,7 @@ function App() {
           <Route exact path="/">
             <Login />
           </Route>
-          <Route exact path="/Home">
+          <Route exact path="/home">
             <Header />
             <Home />
           </Route>
@@ -21,5 +27,11 @@ function App() {
     </div>
   );
 }
+   const mapStateToProps = (state) =>{
+    return {};
+   };
+   const mapDispatchToProps = (dispatch) => ({
+    getUserAuth: () => dispatch(getUserAuth()),
 
-export default App;
+   });
+export default connect(mapStateToProps, mapDispatchToProps) (App);

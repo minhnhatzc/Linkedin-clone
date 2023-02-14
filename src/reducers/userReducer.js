@@ -1,13 +1,18 @@
-import React from 'react'
+import { SET_USER } from "../action/actionType";
 
-const INTITIAL_STATE = {
-    user: null,
+const INITIAL_STATE = {
+  user: null,
 };
 
-function userReducer(state= INTITIAL_STATE, action) {
-  switch(action.type) {
+const userReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case SET_USER:
+      return {
+        ...state,
+        user: action.user,
+      };
     default:
-        return state;
+      return state;
   }
 };
 

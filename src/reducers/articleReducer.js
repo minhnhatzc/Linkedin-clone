@@ -1,10 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function articleReducer() {
-  return (
-    <div></div>
-  )
+  return <div></div>;
 }
 
-export default articleReducer
-
+export default articleReducer;

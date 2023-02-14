@@ -1,7 +1,10 @@
 import styled from "styled-components";
+import { Redirect } from "react-router";
+import { connect } from "react-redux";
 import Leftside from "./Leftside";
 import Main from "./Main";
 import Rightside from "./Rightside";
+
 
 const Home = (props) => {
   return (
@@ -67,8 +70,8 @@ const Layout = styled.div`
   grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
   column-gap: 25px;
   row-gap: 25px;
-  /* grid-template-row: auto; */
   margin: 25px 0;
+
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -76,4 +79,13 @@ const Layout = styled.div`
   }
 `;
 
-export default Home;
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.userState.user,
+  };
+};
+
+
+
+export default connect(mapStateToProps)(Home);
