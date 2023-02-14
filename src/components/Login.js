@@ -40,38 +40,120 @@ const Login = (props) => {
         <Right>
           <h2>CONTENT TOPICS</h2>
           <ul>
-          <li><a href="/">See All Topic</a></li>
-          <li><a href="/">Workplace</a></li>
-          <li><a href="/">Jobs Search</a></li>
-          <li><a href="/">Careers</a></li>
-          <li><a href="/">Interviewing</a></li>
-          <li><a href="/">Internship</a></li>
-          <li><a href="/">Salary and Compensation</a></li>
-          <li><a href="/">Employee Benefits</a></li>
+            <li>
+              <a href="/">See All Topic</a>
+            </li>
+            <li>
+              <a href="/">Workplace</a>
+            </li>
+            <li>
+              <a href="/">Jobs Search</a>
+            </li>
+            <li>
+              <a href="/">Careers</a>
+            </li>
+            <li>
+              <a href="/">Interviewing</a>
+            </li>
+            <li>
+              <a href="/">Internship</a>
+            </li>
+            <li>
+              <a href="/">Salary and Compensation</a>
+            </li>
+            <li>
+              <a href="/">Employee Benefits</a>
+            </li>
           </ul>
         </Right>
       </Content>
 
       <Suggested>
-        <Left>
+        <Left_suggested>
           <h2>Find the right job or internship for you</h2>
-        </Left>
-        <Right>
+        </Left_suggested>
+        <Right_suggested>
           <h2>SUGGESTED SEARCHES</h2>
           <ul>
-          <li><a href="/">Engineering</a></li>
-          <li><a href="/">Business</a></li>
-          <li><a href="/">Finance</a></li>
-          <li><a href="/">Administrative</a></li>
-          <li><a href="/"> Assistant Retail</a></li>
-          <li><a href="/">Customer Services</a></li>
-          <li><a href="/">Operations Information</a></li>
+            <li>
+              <a href="/">Engineering</a>
+            </li>
+            <li>
+              <a href="/">Business</a>
+            </li>
+            <li>
+              <a href="/">Finance</a>
+            </li>
+            <li>
+              <a href="/">Administrative</a>
+            </li>
+            <li>
+              <a href="/"> Assistant Retail</a>
+            </li>
+            <li>
+              <a href="/">Customer Services</a>
+            </li>
+            <li>
+              <a href="/">Operations Information</a>
+            </li>
           </ul>
-          <button>Show more
-          <i class="fi fi-rr-angle-small-down"></i>
-          </button>
-        </Right>
+          <button>Show more...</button>
+        </Right_suggested>
       </Suggested>
+
+      <Footer>
+      <div>
+        <ul>
+          <img src="/images/linkedin.png" alt="" />
+        </ul>
+        <ul>
+          <h2>General</h2>
+          <h3>Sign Up</h3>
+          <h3>Help Center</h3>
+          <h3>About</h3>
+          <h3>Press</h3>
+          <h3>Blog</h3>
+          <h3>Careers</h3>
+          <h3>Developers</h3>
+        </ul>
+        <ul>
+
+          <h2>Browse LinkedIn</h2>
+          <h3>Sign Up</h3>
+          <h3>Help Center</h3>
+          <h3>About</h3>
+          <h3>Press</h3>
+          <h3>Blog</h3>
+          <h3>Careers</h3>
+          <h3>Developers</h3>
+        </ul>
+
+
+        <ul>
+          <h2>Business Solutions</h2>
+          <h3>Sign Up</h3>
+          <h3>Help Center</h3>
+          <h3>About</h3>
+          <h3>Press</h3>
+          <h3>Blog</h3>
+          <h3>Careers</h3>
+          <h3>Developers</h3>
+          </ul>
+
+        <ul>
+          <h2>Directories</h2>
+          <h3>Sign Up</h3>
+          <h3>Help Center</h3>
+          <h3>About</h3>
+          <h3>Press</h3>
+          <h3>Blog</h3>
+          <h3>Careers</h3>
+          <h3>Developers</h3>
+          <h3>Sign Up</h3>
+          <h3>Help Center</h3>
+        </ul>
+        </div>
+      </Footer>
     </Container>
   );
 };
@@ -256,7 +338,7 @@ const Left = styled.div`
   display: flex;
   flex-shrink: 0;
   align-self: flex-start;
-  margin-right:72px;
+  margin-right: 72px;
   margin-bottom: 24px;
   margin-top: 60px;
   h2 {
@@ -265,14 +347,12 @@ const Left = styled.div`
     line-height: 60px;
     color: rgba(0, 0, 0, 0.9);
   }
-
-
 `;
 
 const Right = styled.a`
-width: 480px;
+  width: 480px;
   height: 100%;
-  margin-right:72px;
+  margin-right: 72px;
   margin-bottom: 24px;
   margin-top: 60px;
   h2 {
@@ -280,7 +360,7 @@ width: 480px;
     font-weight: 250;
     font-size: 16px;
     line-height: 20px;
-    margin: 10px;
+    margin: 10px 10px 10px 0;
   }
   ul {
     list-style: none;
@@ -290,13 +370,11 @@ width: 480px;
   }
   li {
     text-align: left;
-    &:first-child a{
-    color:#0a66c2;
-    border: 2px solid #0a66c2;
+    &:first-child a {
+      color: #0a66c2;
+      border: 2px solid #0a66c2;
+    }
   }
-
-  }
-
 
   a {
     display: flex;
@@ -315,26 +393,138 @@ width: 480px;
     color: #000000;
     font-weight: 250;
     &:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-   }
+      background-color: rgba(0, 0, 0, 0.05);
+    }
   }
-  `;
-const Suggested = styled(Content)`
+`;
+const Suggested = styled.div`
+  height: 440px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
   background-color: #ffffff;
+`;
+const Left_suggested = styled.div`
+  width: 480px;
+  height: 100%;
+  margin-left: 185px;
+  display: flex;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-right: 72px;
+  margin-bottom: 24px;
+  margin-top: 60px;
+  h2 {
+    font-weight: 250;
+    font-size: 48px;
+    line-height: 60px;
+    color: rgba(0, 0, 0, 0.9);
+  }
+`;
+
+const Right_suggested = styled.div`
+  width: 480px;
+  height: 100%;
+  margin-right: 72px;
+  margin-bottom: 24px;
+  margin-top: 60px;
+  h2 {
+    margin-bottom: 20px;
+    font-weight: 250;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 10px 10px 10px 0;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  li {
+    text-align: left;
+    &:first-child a {
+      color: #0a66c2;
+      border: 2px solid #0a66c2;
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-right: 6px;
+    margin-bottom: 12px;
+    padding: 0 25px;
+    float: left;
+    text-decoration: none;
+    min-height: 48px;
+    border: 2px solid #000000;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    font-weight: 250;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+
   button {
     width: 124px;
     height: 48px;
     font-size: 16px;
     font-weight: 300;
     margin-left: -8px;
-    padding: 2px 8px !important;
+    padding: 0px 8px;
     border: none;
     background-color: #ffffff;
     &:hover {
       background-color: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
     }
   }
+`;
 
+const Footer = styled.div`
+  height: 430px;
+  width: 100%;
+  background-color: #eae6df;
+
+  div {
+  margin-left: 123px;
+  width: 1128px;
+  height: 380px;
+  padding-top: 24px;
+  padding-bottom: 22px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: 550;
+    line-height: 20px;
+    padding-bottom: 10px;
+  }
+  h3 {
+    font-size: 14px;
+    text-align: left;
+    font-weight: 200;
+    margin: 10px 0;
+    line-height: 18px;
+    color:rgb(0, 0, 0, 0.7);
+
+
+  }
 `;
 
 const mapStateToProps = (state) => {
