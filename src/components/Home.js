@@ -9,6 +9,7 @@ import Rightside from "./Rightside";
 const Home = (props) => {
   return (
     <Container>
+    {!props.user && <Redirect to="/" />}
       <Section>
         <h5>
           <a>Hiring in a hurry? - </a>

@@ -12,6 +12,25 @@ const Login = (props) => {
         <a href="/">
           <img src="/images/login-logo.svg" alt="" />
         </a>
+        <Navcenter>
+        <a>
+          <img src="/images/discover.svg" alt="" />
+          <span>Discover</span>
+        </a>
+        <a>
+          <img src="/images/people.svg" alt="" />
+          <span>People</span>
+        </a>
+        <a>
+          <img src="/images/learning.svg" alt="" />
+          <span>Learning</span>
+        </a>
+        <a>
+          <img src="/images/job.svg" alt="" />
+          <span>Jobs</span>
+        </a>
+        <li></li>
+        </Navcenter>
         <div>
           <Join>Join now</Join>
           <SignIn onClick={() => props.signIn()}>Sign in</SignIn>
@@ -102,56 +121,54 @@ const Login = (props) => {
       </Suggested>
 
       <Footer>
-      <div>
-        <ul>
-          <img src="/images/linkedin.png" alt="" />
-        </ul>
-        <ul>
-          <h2>General</h2>
-          <h3>Sign Up</h3>
-          <h3>Help Center</h3>
-          <h3>About</h3>
-          <h3>Press</h3>
-          <h3>Blog</h3>
-          <h3>Careers</h3>
-          <h3>Developers</h3>
-        </ul>
-        <ul>
-
-          <h2>Browse LinkedIn</h2>
-          <h3>Sign Up</h3>
-          <h3>Help Center</h3>
-          <h3>About</h3>
-          <h3>Press</h3>
-          <h3>Blog</h3>
-          <h3>Careers</h3>
-          <h3>Developers</h3>
-        </ul>
-
-
-        <ul>
-          <h2>Business Solutions</h2>
-          <h3>Sign Up</h3>
-          <h3>Help Center</h3>
-          <h3>About</h3>
-          <h3>Press</h3>
-          <h3>Blog</h3>
-          <h3>Careers</h3>
-          <h3>Developers</h3>
+        <div>
+          <ul>
+            <img src="/images/linkedin.png" alt="" />
+          </ul>
+          <ul>
+            <h2>General</h2>
+            <h3>Sign Up</h3>
+            <h3>Help Center</h3>
+            <h3>About</h3>
+            <h3>Press</h3>
+            <h3>Blog</h3>
+            <h3>Careers</h3>
+            <h3>Developers</h3>
+          </ul>
+          <ul>
+            <h2>Browse LinkedIn</h2>
+            <h3>Sign Up</h3>
+            <h3>Help Center</h3>
+            <h3>About</h3>
+            <h3>Press</h3>
+            <h3>Blog</h3>
+            <h3>Careers</h3>
+            <h3>Developers</h3>
           </ul>
 
-        <ul>
-          <h2>Directories</h2>
-          <h3>Sign Up</h3>
-          <h3>Help Center</h3>
-          <h3>About</h3>
-          <h3>Press</h3>
-          <h3>Blog</h3>
-          <h3>Careers</h3>
-          <h3>Developers</h3>
-          <h3>Sign Up</h3>
-          <h3>Help Center</h3>
-        </ul>
+          <ul>
+            <h2>Business Solutions</h2>
+            <h3>Sign Up</h3>
+            <h3>Help Center</h3>
+            <h3>About</h3>
+            <h3>Press</h3>
+            <h3>Blog</h3>
+            <h3>Careers</h3>
+            <h3>Developers</h3>
+          </ul>
+
+          <ul>
+            <h2>Directories</h2>
+            <h3>Sign Up</h3>
+            <h3>Help Center</h3>
+            <h3>About</h3>
+            <h3>Press</h3>
+            <h3>Blog</h3>
+            <h3>Careers</h3>
+            <h3>Developers</h3>
+            <h3>Sign Up</h3>
+            <h3>Help Center</h3>
+          </ul>
         </div>
       </Footer>
     </Container>
@@ -192,6 +209,7 @@ const Join = styled.a`
     background-color: rgb(0, 0, 0, 0.08);
     color: rgb(0, 0, 0, 0.9);
     text-decoration: none;
+    cursor: pointer;
   }
 `;
 const SignIn = styled.a`
@@ -208,6 +226,7 @@ const SignIn = styled.a`
   &:hover {
     background-color: rgb(112, 181, 249, 0.15);
     color: #0a66c2;
+    cursor: pointer;
   }
 `;
 const Section = styled.a`
@@ -290,6 +309,7 @@ const Google = styled.button`
   &:hover {
     background-color: rgba(207, 207, 207, 0.25);
     color: rgba(0, 0, 0, 0.75);
+    cursor: pointer;
   }
   img {
     margin: 10px;
@@ -315,6 +335,7 @@ const Facebook = styled.button`
   &:hover {
     background-color: rgba(207, 207, 207, 0.25);
     color: rgba(0, 0, 0, 0.75);
+    cursor: pointer;
   }
   img {
     margin: 10px;
@@ -372,7 +393,7 @@ const Right = styled.a`
     text-align: left;
     &:first-child a {
       color: #0a66c2;
-      border: 2px solid #0a66c2;
+      border: 1px solid #0a66c2;
     }
   }
 
@@ -386,7 +407,7 @@ const Right = styled.a`
     float: left;
     text-decoration: none;
     min-height: 48px;
-    border: 2px solid #000000;
+    border: 1px solid #000000;
     border-radius: 24px;
     font-size: 16px;
     font-weight: 600;
@@ -424,7 +445,7 @@ const Left_suggested = styled.div`
 `;
 
 const Right_suggested = styled.div`
-  width: 480px;
+  width: 420px;
   height: 100%;
   margin-right: 72px;
   margin-bottom: 24px;
@@ -444,10 +465,6 @@ const Right_suggested = styled.div`
   }
   li {
     text-align: left;
-    &:first-child a {
-      color: #0a66c2;
-      border: 2px solid #0a66c2;
-    }
   }
 
   a {
@@ -460,7 +477,7 @@ const Right_suggested = styled.div`
     float: left;
     text-decoration: none;
     min-height: 48px;
-    border: 2px solid #000000;
+    border: 1px solid #000000;
     border-radius: 24px;
     font-size: 16px;
     font-weight: 600;
@@ -493,21 +510,19 @@ const Footer = styled.div`
   background-color: #eae6df;
 
   div {
-  margin-left: 123px;
-  width: 1128px;
-  height: 380px;
-  padding-top: 24px;
-  padding-bottom: 22px;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-
+    margin-left: 123px;
+    width: 1128px;
+    height: 380px;
+    padding-top: 24px;
+    padding-bottom: 22px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
   }
   ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-
   }
   h2 {
     font-size: 16px;
@@ -521,11 +536,67 @@ const Footer = styled.div`
     font-weight: 200;
     margin: 10px 0;
     line-height: 18px;
-    color:rgb(0, 0, 0, 0.7);
-
-
+    color: rgb(0, 0, 0, 0.7);
+    &:hover {
+      color: #0a66c2;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 `;
+const Navcenter = styled.div`
+    display: flex;
+    margin-left: 450px;
+
+
+  a {
+    width: 64px;
+    height: 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 10px;
+    padding-bottom: 9px;
+
+  }
+  img {
+    margin-top: 10px;
+    height: 20px;
+    width:20px;
+    filter: grayscale(150%);
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(0, 0, 0, 0.08);
+      border: none;
+    }
+  }
+  span {
+    height: 17px;
+    width: 52px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 17.5px;
+    font-weight: 50;
+    &:hover {
+      cursor: pointer;
+      color: rgb(0, 0, 0, 0.9)
+    }
+  }
+  li {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 37px;
+      border-left: 1px solid rgb(0, 0, 0, 0.4);
+      right: -9px;
+      margin-top: 36px;
+      transform: translateY(-50%);
+  }
+`;
+
+
+
 
 const mapStateToProps = (state) => {
   return {
